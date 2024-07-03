@@ -39,7 +39,7 @@ const authController = {
   signupAction: async (req, res) => {
     try {
     if (req.body.password !== req.body.passwordConfirm) {
-      return res.status(400).json('password need to be identical');
+      return res.status(400).json('Password need to be identical');
     }
 
     req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10));
@@ -55,7 +55,7 @@ const authController = {
       return res.status(409).send('Mail already exist');
     }
     } catch (error) {
-      return res.status(500).json({ message: 'An error occurred during signup', error: error.message });
+      return res.status(500).json({ message: 'Mail already exist', error: error.message });
     }
   },
 
