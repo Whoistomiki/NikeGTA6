@@ -1,25 +1,20 @@
-const { User } = require("../models/user");
+const { User } = require("../models");
 const bcrypt = require("bcrypt");
 
 const userController = {
-  getUser = async (req, res) => {
+  getUser: async (req, res) => {
     try {
-      const userId = req.params.id;
-      console.log('Fetching user with ID:', userId);
-  
-      const user = await User.findByPk(userId);
+      const user = await User.findByPk(req.params.id);
       if (!user) {
-        return res.status(404).json({ message: 'User not found' });
+        return res.status(404).json(`User not found`);
       }
-  
-      return res.status(200).json(user);
+      res.status(200).json(user);
     } catch (error) {
-      console.error('Error fetching user:', error);
-      return res.status(500).json({ message: 'Error fetching user', error: error.message });
+      console.error('Error in getUser:', error);
+      res.status(500).json({ message: 'Internal server error' });
     }
-  };
+  },
   
-
   modifyUser: async (req, res) => {
     const userId = req.params.id;
     const { firstname, lastname, email, password } = req.body;

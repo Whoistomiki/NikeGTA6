@@ -1,7 +1,6 @@
 module.exports = {
     secret: process.env.SECRET_KEY,
     jwtExpiration: 900,           // 1 hour
-    jwtRefreshExpiration: 86400,   // 24 hours
 };
 
 //  Create the token for the user at the login/signup

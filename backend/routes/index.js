@@ -1,5 +1,6 @@
 const { Router }= require("express");
 const authRouter = require("./authRouter");
+const userRouter = require("./userRouter");
 //  Importation of every routers in this index router file
 
 const mainRouter = new Router();
@@ -11,6 +12,7 @@ mainRouter.get('/', (_, res) => {
 
 // mainRouter.use(userRouter);
 mainRouter.use(authRouter);
+mainRouter.use(userRouter);
 // Using our differents routers
 
 module.exports = mainRouter;
