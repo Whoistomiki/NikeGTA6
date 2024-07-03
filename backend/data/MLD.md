@@ -1,11 +1,11 @@
-USERS:
+USER:
 user_id (PK)
 firstname
 lastname
 email (unique, not null)
 user_password
 
-ORDERS :
+ORDER :
 order_id (PK)
 order_date
 order_status
@@ -19,7 +19,7 @@ unit_price
 order_id (FK vers ORDER)
 product_id (FK vers PRODUCT)
 
-PRODUCTS :
+PRODUCT :
 product_id (PK)
 product_name
 product_description

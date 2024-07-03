@@ -1,7 +1,7 @@
 -- Réinitialisation des séquences pour les tables "USER", "PRODUCT", "ORDER" et "ORDER_ITEM"
 -- Suppression des données et réinitialisation des séquences
 BEGIN;
-TRUNCATE "USERS", "PRODUCT", "ORDER", "ORDER_ITEM" RESTART IDENTITY CASCADE;
+TRUNCATE "USERS", "PRODUCTS", "ORDERS", "ORDER_ITEMS" RESTART IDENTITY CASCADE;
 
 -- Insertion des utilisateurs
 INSERT INTO "USERS"("user_id", "firstname", "lastname", "email", "user_password")
@@ -32,7 +32,7 @@ VALUES
     (3, '2024-07-02', 'En cours', 1700, 3);
 
 -- Insertion des éléments de commande
-INSERT INTO "ORDER_ITEM"("order_item_id", "order_id", "product_id", "quantity", "unit_price")
+INSERT INTO "ORDER_ITEMS"("order_item_id", "order_id", "product_id", "quantity", "unit_price")
 VALUES
     (1, 1, 1, 1, 900),
     (2, 2, 4, 1, 1400),

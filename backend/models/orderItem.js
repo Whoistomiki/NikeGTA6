@@ -1,12 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  const orderItem = sequelize.define('orderItem', {
-    order_item_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
+  const OrderItem = sequelize.define('orderItem', {
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -15,7 +10,9 @@ module.exports = (sequelize) => {
       type: DataTypes.NUMERIC(10, 2),
       allowNull: false
     }
+  }, {
+    timestamps: false
   });
 
-  return orderItem;
+  return OrderItem;
 };

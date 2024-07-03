@@ -1,4 +1,4 @@
--- Création de la table USERS
+-- Création de la table USER
 CREATE TABLE "USERS" (
     user_id SERIAL PRIMARY KEY,
     firstname TEXT,
@@ -7,7 +7,7 @@ CREATE TABLE "USERS" (
     user_password TEXT NOT NULL
 );
 
--- Création de la table PRODUCTS
+-- Création de la table PRODUCT
 CREATE TABLE "PRODUCTS" (
     product_id SERIAL PRIMARY KEY,
     product_name TEXT,
@@ -17,7 +17,7 @@ CREATE TABLE "PRODUCTS" (
     stock_quantity INT
 );
 
--- Création de la table ORDERS
+-- Création de la table ORDER
 CREATE TABLE "ORDERS" (
     order_id SERIAL PRIMARY KEY,
     order_date DATE,
@@ -27,7 +27,7 @@ CREATE TABLE "ORDERS" (
 );
 
 -- Création de la table ORDER_ITEM
-CREATE TABLE "ORDER_ITEM" (
+CREATE TABLE "ORDER_ITEMS" (
     order_item_id SERIAL PRIMARY KEY,
     quantity INT,
     unit_price NUMERIC(10, 2),
